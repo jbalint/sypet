@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'lib', include: '*.jar')
+}
