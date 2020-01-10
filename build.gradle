@@ -3,6 +3,10 @@ plugins {
     id 'idea'
 }
 
+repositories {
+    mavenCentral()
+}
+
 sourceSets {
     main {
         java {
@@ -11,6 +15,15 @@ sourceSets {
     }
 }
 
+
+def localDeps = fileTree('lib') {
+    include '*.jar'
+    exclude "soot-trunk.jar"
+    exclude "sat4j-pb.jar"
+}
+
 dependencies {
-    compile fileTree(dir: 'lib', include: '*.jar')
+    compile localDeps
+    compile "ca.mcgill.sable:soot:4.0.0"
+    compile "org.sat4j:org.sat4j.pb:2.3.1"
 }

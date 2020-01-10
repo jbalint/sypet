@@ -350,7 +350,7 @@ public class Solver {
 			pos++;
 		}
 
-		return new ObjectiveFunction(new VecInt(objective), new Vec<BigInteger>(coefficients));
+		return new ObjectiveFunction(new VecInt(objective), new Vec(coefficients));
 	}
 
 	protected int getOptimum(Constraint c) {
